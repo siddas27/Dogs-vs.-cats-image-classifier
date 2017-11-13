@@ -34,8 +34,7 @@ def convert_images(path, save_path=None):
         directory = os.path.dirname(path)
         save_path = os.path.join(directory, "{}_preprocessed".format(
             os.path.basename(path)))
-        os.makedirs(save_path)
-    elif not os.path.isdir(save_path):
+    if not os.path.isdir(save_path):
         os.makedirs(save_path)
     files = os.listdir(path)
     for f in files:
